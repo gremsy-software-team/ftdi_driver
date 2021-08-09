@@ -19,7 +19,7 @@
   
 ## Check connection of FT4232 
  - search các cổng tty kết nối với s5l 
-	https://github.com/gremsy-software-team/ftdi_driver/issues/1#issue-963733580
+	![Test Image 1](https://github.com/gremsy-software-team/ftdi_driver/blob/develop/ftdi_sio/doc/image.png)
  - Nếu hiển thị đầy đủ 4 thiết bị tty -> cài đặt thành công
  
   
