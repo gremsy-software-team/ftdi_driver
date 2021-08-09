@@ -4,7 +4,7 @@ project(kernel_modules)
 
 set(KERNEL_MODULE_LIST
 	# hello_world
-	ftdi_module
+	ftdi_sio
 )
 
 # Get kernel version string
