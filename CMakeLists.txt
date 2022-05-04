@@ -2,20 +2,11 @@ cmake_minimum_required(VERSION 3.5)
 
 project(kernel_modules)
 
-
-if (PLATFORM STREQUAL s5l) 
-   set(KERNEL_MODULE_LIST
-   	ftdi_sio_kernel_v4
-   )
+if (PLATFORM STREQUAL s5l)
+    	set(KERNEL_MODULE_LIST ftdi_sio_v4)
 else()
-   set(KERNEL_MODULE_LIST
-    	ftdi_sio_kernel_v5
-   )
-
-set(KERNEL_MODULE_LIST
-    #hello_world
-    ftdi_sio
-)
+	set(KERNEL_MODULE_LIST ftdi_sio_v5)
+endif()
 
 # Get kernel version string
 if(NOT DEFINED KERNEL_VERSION)
@@ -43,8 +34,10 @@ endif()
 # Different commands to generate kernel headers on 4.9 vs 5.4 kernels
 if (PLATFORM STREQUAL s5l)
    set(KERNEL_GENERATE_COMMANDS silentoldconfig scripts)
+   #set(KERNEL_MODULE_LIST ftdi_sio_kernel_v4)
 else()
    set(KERNEL_GENERATE_COMMANDS prepare)
+   #set(KERNEL_MODULE_LIST ftdi_sio_kernel_v5)
 endif()
 
 include (ExternalProject)
